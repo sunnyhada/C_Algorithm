@@ -2,7 +2,7 @@
 
 int Cycle(int N)
 {
-	int num=N; //while문에 바로 들어가기 위한 dummy값
+	int num=N;
 	int cycle = 0;
 	int sum;
 	
