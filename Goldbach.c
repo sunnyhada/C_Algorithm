@@ -6,8 +6,8 @@ int makePrime(int num, int *Prime, int *numofPrime)
 	int j = 2;
 	
 	int cnt = 0;
-
-	while( i < num )
+	
+	while( i < num)
 	{
 		j = 2;
 		while(j <= i)
@@ -16,27 +16,37 @@ int makePrime(int num, int *Prime, int *numofPrime)
 			j++;
 		}
 		if(i == j)
-		{
+		{	
 			Prime[cnt] = i;
 			cnt ++;
 		}
 		i++;
 	}
 
-	*numofPrime = cnt + 1;
+	*numofPrime = cnt;
 
 	return 0;
 }	
 
+int PrimeCnt(int *Prime, int numofPrime, int num)
+{
+	int cnt = 0;
+	
+	while (Prime[cnt] <= num && cnt < numofPrime) cnt++;
+
+	return cnt;
+}
+
 int Goldbach(int *Prime, int numofPrime, int num, int *a, int *b)
 {
-	int i = numofPrime/2;
-	int j = numofPrime/2;
+	int cnt = PrimeCnt(Prime, numofPrime, num);
+	int i = cnt/2;
+	int j = cnt/2;
 
-	while(i < numofPrime )
+	while(i < cnt)
 	{
-		j = numofPrime/2;
-		while( j >= 0 )
+		j = cnt/2;
+		while(j>=0)
 		{
 			if(Prime[i] + Prime[j] == num)
 			{
@@ -64,13 +74,13 @@ int main(void)
 
 	fscanf(stdin, "%d", &T);
 
+	makePrime(1000, Prime, &numofPrime);
+
 	while(i<T)
 	{
 		fscanf(stdin, "%d", &num);
-		makePrime(num, Prime, &numofPrime);
 		Goldbach(Prime, numofPrime, num, &a, &b);
 		fprintf(stdout, "%d %d\n", Prime[a], Prime[b]);
-		
 		i++;
 	}
 
