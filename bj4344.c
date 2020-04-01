@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-float AboveAvg(float *arr, float arrlen, float avg)
+float AboveAvg(int *arr, float arrlen, float avg)
 {
 	int i = 0;
 	float cnt = 0;
@@ -17,7 +17,7 @@ float AboveAvg(float *arr, float arrlen, float avg)
 int main(void)
 {
 	int Case;
-	float score[1000];
+	int score[1000];
 
 	float avg = 0;
 
@@ -35,8 +35,8 @@ int main(void)
 		fscanf(stdin, "%d", &student);
 		while( j < student )
 		{
-			fscanf(stdin, "%f", &score[j]);
-			avg += score[j]/student;
+			fscanf(stdin, "%d", &score[j]);
+			avg += (float)score[j]/student;
 			j++;
 		}
 		fprintf(stdout, "%.3f%%\n", AboveAvg(score, student, avg));
