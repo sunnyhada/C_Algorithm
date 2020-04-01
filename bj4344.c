@@ -36,9 +36,10 @@ int main(void)
 		while( j < student )
 		{
 			fscanf(stdin, "%d", &score[j]);
-			avg += (double)score[j]/(double)student;
+			avg += score[j];
 			j++;
 		}
+		avg = avg/(double)student;
 		fprintf(stdout, "%.3f%%\n", AboveAvg(score, student, avg));
 		i++;
 	}
