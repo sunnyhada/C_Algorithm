@@ -16,7 +16,8 @@ void Star(int len)
 		{
 			if(i%2==1)
 			{
-				if(i<(len+1)/2)
+				if(i==1) printf("*");
+				else if(i<(len+1)/2)
 				{
 					for(int j=0; j<(i+1)/2; j++)
 					{
