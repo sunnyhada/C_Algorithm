@@ -2,6 +2,11 @@
 
 void Star(int len)
 {
+	if(len==1)
+	{
+		printf("*\n");
+		return;
+	}
 	for(int i = 0; i<len+2; i++)
 	{
 		if(i==0 || i == len+1) //맨 위&아래
@@ -16,15 +21,15 @@ void Star(int len)
 					for(int j=0; j<(i+1)/2; j++)
 					{
 						printf("*");
-						printf(" ");
+						printf("0");
 					}
 					for(int j=0; j<len-4*(i/2)-2;j++)
 					{
-						printf(" ");
+						printf("0");
 					}
 					for(int j=0; j<i/2; j++)
 					{
-						printf(" ");
+						printf("0");
 						printf("*");
 					}
 				}
@@ -34,12 +39,12 @@ void Star(int len)
 					for(int j=0; j<(i+1)/2-1; j++)
 					{
 						printf("*");
-						printf(" ");
+						printf("0");
 					}
 					printf("*");
 					for(int j=0; j<i/2; j++)
 					{
-						printf(" ");
+						printf("0");
 						printf("*");
 					}
 				}
@@ -49,15 +54,15 @@ void Star(int len)
 					for(int j=0; j<(len-i+1)/2+1; j++)
 					{
 						printf("*");
-						printf(" ");
+						printf("0");
 					}
 					for(int j=0; j<(len-4*((len-i)/2+1));j++)
 					{
-						printf(" ");
+						printf("0");
 					}
 					for(int j=0; j<(len-i)/2+1; j++)
 					{
-						printf(" ");
+						printf("0");
 						printf("*");
 					}
 				}
@@ -69,7 +74,7 @@ void Star(int len)
 					for(int j=0; j<(i+1)/2; j++)
 					{
 						printf("*");
-						printf(" ");
+						printf("0");
 					}
 					for(int j=0; j<len-4*(i/2)+2;j++)
 					{
@@ -77,7 +82,7 @@ void Star(int len)
 					}
 					for(int j=0; j<i/2-1; j++)
 					{
-						printf(" ");
+						printf("0");
 						printf("*");
 					}
 				}
@@ -86,7 +91,7 @@ void Star(int len)
 					for(int j=0; j<(len-i)/2+1; j++)
 					{
 						printf("*");
-						printf(" ");
+						printf("0");
 					}
 					for(int j=0; j<(len-4*((len-i-1)/2)-4);j++)
 					{
@@ -94,7 +99,7 @@ void Star(int len)
 					}
 					for(int j=0; j<(len-i)/2+1; j++)
 					{
-						printf(" ");
+						printf("0");
 						printf("*");
 					}
 				}
